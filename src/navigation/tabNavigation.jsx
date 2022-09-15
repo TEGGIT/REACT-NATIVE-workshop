@@ -3,7 +3,8 @@ import {View, Text, StyleSheet} from "react-native";
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import StackMainNavigation from "../navigation/ScreenNavigationMain";
+import StackMainNavigation from "./ScreenNavigationMain";
+import StackUsersNavigation from "./ScreenNavigationUsers";
 
 const Tab = createBottomTabNavigator();
 
@@ -11,9 +12,15 @@ const tabs = [
     {
         name: 'Main',
         component: StackMainNavigation,
-        title: 'Main',
+        title: 'Главная',
         id: 0,
     },
+    {
+        name: 'Users',
+        component: StackUsersNavigation,
+        title: 'Пользователи',
+        id: 1,
+    }
 ]
 
 export default function TabNavigate() {
@@ -23,7 +30,7 @@ export default function TabNavigate() {
             headerTitleAlign: 'center',
             headerShown: false,
             tabBarHideOnKeyboard: true,
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
         }}>
             {tabs.map(tab =>
                 <Tab.Screen
@@ -31,6 +38,11 @@ export default function TabNavigate() {
                     name={`${tab.name}`}
                     component={tab.component}
                     options={{
+                        tabBarStyle: {
+                            alignItems: "center",
+                            flexDirection: "row",
+                        },
+                        tabBarIcon: () => <></>,
                         title: tab.title,
                     }}
                 />

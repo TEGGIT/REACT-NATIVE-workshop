@@ -1,6 +1,5 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
-import TabNavigate from "./src/screens/tabNavigation";
+import TabNavigate from "./src/navigation/tabNavigation";
 
 
 export default function App() {
@@ -11,15 +10,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-  headerText: {
-    fontSize: 18
-  },
-});
