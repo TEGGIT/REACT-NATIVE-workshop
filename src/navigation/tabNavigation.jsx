@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text, StyleSheet} from "react-native";
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -41,6 +40,9 @@ export default function TabNavigate() {
                         tabBarStyle: {
                             alignItems: "center",
                             flexDirection: "row",
+                        },
+                        tabBarLabelStyle: {
+                            fontSize: 14
                         },
                         tabBarIcon: () => <></>,
                         title: tab.title,
